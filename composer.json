@@ -1,7 +1,7 @@
 {
 	"name": "rokyt/trello",
-	"description": "The Laravel Framework.",
-	"keywords": ["framework", "laravel"],
+	"description": "Trello data debug tool.",
+	"keywords": ["trello", "debug"],
 	"license": "MIT",
 	"type": "project",
 	"require": {
