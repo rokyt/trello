@@ -19,3 +19,6 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+Route::any('/connect/{network}/go',         'ConnectController@getConnectToNetwork');
+Route::any('/connect/{network}/callback',   'ConnectController@getCallbackFromNetwork');

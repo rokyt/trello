@@ -11,9 +11,9 @@ class EventServiceProvider extends ServiceProvider {
 	 * @var array
 	 */
 	protected $listen = [
-		'event.name' => [
-			'EventListener',
-		],
+		'SocialiteProviders\Manager\SocialiteWasCalled' => [
+			'SocialiteProviders\Trello\TrelloExtendSocialite@handle'
+	    ],
 	];
 
 	/**
