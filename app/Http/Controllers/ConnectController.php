@@ -68,7 +68,7 @@ class ConnectController extends Controller {
                 Session::put('tokenSecret', $trello->tokenSecret);
                 Session::put('user', $trello->user);
 
-                return Redirect::to("/boards");
+                return Redirect::to("/");
 
                 break;
 
