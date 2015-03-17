@@ -12,8 +12,9 @@ use Illuminate\Support\MessageBag;
 use Laravel\Socialite\Facades\Socialite as Socialize;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Response;
 
-class ConnectController extends Controller {
+class ApiController extends Controller {
 
     /*
     |--------------------------------------------------------------------------
@@ -41,40 +42,35 @@ class ConnectController extends Controller {
      *
      * @return Response
      */
-    function getConnectToNetwork($network)
+    function getBoardsAndList()
     {
-        switch ($network) {
-            case "trello":
-                return Socialize::with('trello')->redirect();
-                break;
+        $session = Session::all();
 
-            default:
-                return view("errors.500");
-                break;
+        $boardData = [];
+
+        $trello = new \Trello\Trello(env("TRELLO_KEY"), env("TRELLO_SECRET"), $session["token"], $session["tokenSecret"]);
+        $boards = $trello->members->get('me/boards');
+        if ($boards !== false)
+        {
+            foreach ($boards as $board)
+            {
+                $listData = [];
+                $lists = $trello->boards->get($board->id."/lists");
+                if ($lists !== false)
+                {
+                    foreach ($lists as $list)
+                    {
+                        $listData[$list->id] = $list->name;
+                    }
+
+                    $boardData[$board->id] = [
+                        "name"		=> $board->name,
+                        "lists"		=> $listData
+                    ];
+                }
+            }
         }
-    }
 
-    function getCallbackFromNetwork($network)
-    {
-        switch ($network) {
-
-            case "trello":
-                $trello = Socialize::with('trello')->user();
-
-                $token = $trello->token;
-                $tokenSecret = $trello->tokenSecret;
-
-                Session::put('token', $trello->token);
-                Session::put('tokenSecret', $trello->tokenSecret);
-                Session::put('user', $trello->user);
-
-                return Redirect::to("/boards");
-
-                break;
-
-            default:
-                return view("errors.500");
-                break;
-        }
+        return Response::json($boardData);
     }
 }
