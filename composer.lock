@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9e95ff53c898d4c6e406474387a21572",
+    "hash": "e125dc8d91ef0ae5c83cf484fd87e0a9",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -224,16 +224,16 @@
         },
         {
             "name": "guzzle/guzzle",
-            "version": "v3.9.2",
+            "version": "v3.9.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle3.git",
-                "reference": "54991459675c1a2924122afbb0e5609ade581155"
+                "reference": "0645b70d953bc1c067bbc8d5bc53194706b628d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle3/zipball/54991459675c1a2924122afbb0e5609ade581155",
-                "reference": "54991459675c1a2924122afbb0e5609ade581155",
+                "url": "https://api.github.com/repos/guzzle/guzzle3/zipball/0645b70d953bc1c067bbc8d5bc53194706b628d9",
+                "reference": "0645b70d953bc1c067bbc8d5bc53194706b628d9",
                 "shasum": ""
             },
             "require": {
@@ -274,6 +274,9 @@
                 "zendframework/zend-cache": "2.*,<2.3",
                 "zendframework/zend-log": "2.*,<2.3"
             },
+            "suggest": {
+                "guzzlehttp/guzzle": "Guzzle 5 has moved to a new package name. The package you have installed, Guzzle 3, is deprecated."
+            },
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -301,7 +304,7 @@
                     "homepage": "https://github.com/guzzle/guzzle/contributors"
                 }
             ],
-            "description": "Guzzle is a PHP HTTP client library and framework for building RESTful web service clients",
+            "description": "PHP HTTP client. This library is deprecated in favor of https://packagist.org/packages/guzzlehttp/guzzle",
             "homepage": "http://guzzlephp.org/",
             "keywords": [
                 "client",
@@ -312,7 +315,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2014-08-11 04:32:36"
+            "time": "2015-03-18 18:23:50"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -661,16 +664,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.0.16",
+            "version": "v5.0.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "861a1e78c84dca82fe4bd85d00349c52304eea77"
+                "reference": "b21be29a1fb12c84ab4e0b723e9c11492d0b25fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/861a1e78c84dca82fe4bd85d00349c52304eea77",
-                "reference": "861a1e78c84dca82fe4bd85d00349c52304eea77",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/b21be29a1fb12c84ab4e0b723e9c11492d0b25fe",
+                "reference": "b21be29a1fb12c84ab4e0b723e9c11492d0b25fe",
                 "shasum": ""
             },
             "require": {
@@ -783,7 +786,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2015-03-13 13:27:55"
+            "time": "2015-03-21 16:10:01"
         },
         {
             "name": "laravel/socialite",
@@ -1426,18 +1429,12 @@
             "time": "2015-02-26 18:47:15"
         },
         {
-            "name": "socialiteproviders/trello",
-            "version": "v1.0.7",
+            "name": "ssx/socialite-trello",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/SocialiteProviders/Trello.git",
-                "reference": "7f46056dfd882b08d6a8daeef4c098c69fcaee80"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/SocialiteProviders/Trello/zipball/7f46056dfd882b08d6a8daeef4c098c69fcaee80",
-                "reference": "7f46056dfd882b08d6a8daeef4c098c69fcaee80",
-                "shasum": ""
+                "url": "https://github.com/ssx/socialite-trello.git",
+                "reference": "d2df8bd7a149d9b47b90d036911db1e88c5bbfc5"
             },
             "require": {
                 "php": ">=5.4.0",
@@ -1449,7 +1446,6 @@
                     "SocialiteProviders\\Trello\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1460,7 +1456,7 @@
                 }
             ],
             "description": "Trello OAuth1 Provider for Laravel Socialite",
-            "time": "2015-03-07 11:01:36"
+            "time": "2015-03-21 17:51:52"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -3346,7 +3342,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "ssx/socialite-trello": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

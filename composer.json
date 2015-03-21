@@ -7,13 +7,19 @@
 	"require": {
 		"laravel/framework": "5.0.*",
 		"socialiteproviders/manager": "0.1.*",
-		"socialiteproviders/trello": "~1.0",
+		"ssx/socialite-trello": "dev-master",
 	  	"mattzuba/php-trello": "*"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",
 		"phpspec/phpspec": "~2.1"
 	},
+	"repositories": [
+	  {
+		"type": "git",
+		"url": "https://github.com/ssx/socialite-trello.git"
+	  }
+	],
 	"autoload": {
 		"classmap": [
 			"database"
