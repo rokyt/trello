@@ -27,7 +27,7 @@ $(document).ready(function() {
         $("#content").empty();
         $("<h2>Your Trello Boards &amp; Lists</h2>").appendTo('#content');
         $.each(data, function(board_idx, board_val){
-            $('<div class="board" id="board_' + board_idx + '">' + board_val.name + '<br><span class="identifier">' + board_idx + '</span><br><ul class="list"></ul>').appendTo('#content');
+            $('<div class="board" id="board_' + board_idx + '">' + board_val.name + '<br><span class="identifier">' + board_idx + '</span><br><br>Lists for this board:<ul class="list"></ul>').appendTo('#content');
             $.each(board_val.lists, function (list_idx, list_val) {
                 $('#board_' + board_idx + ' > ul').append('<li>' + list_val + '<br><span class="identifier">' + list_idx + '</span></li>');
             });
