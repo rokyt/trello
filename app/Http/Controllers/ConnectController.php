@@ -36,11 +36,6 @@ class ConnectController extends Controller {
         $this->middleware('guest');
     }
 
-    /**
-     * Show the application dashboard to the user.
-     *
-     * @return Response
-     */
     function getConnectToNetwork($network)
     {
         switch ($network) {
@@ -76,5 +71,11 @@ class ConnectController extends Controller {
                 return view("errors.500");
                 break;
         }
+    }
+
+    function getRemoveTokenForCurrentUser()
+    {
+        Session::remove("token");
+        return Redirect::to("/");
     }
 }

@@ -13,6 +13,7 @@
 
 Route::any('/connect/{network}/go',         'ConnectController@getConnectToNetwork');
 Route::any('/connect/{network}/callback',   'ConnectController@getCallbackFromNetwork');
+Route::any('/disconnect',                   'ConnectController@getRemoveTokenForCurrentUser');
 
 Route::get('/api/boards', 					'ApiController@getBoardsAndList');
 Route::get('/', 							'HomeController@index');

@@ -24,7 +24,7 @@ class TrelloOAuthProvider extends Trello
      *
      * @var string
      */
-    protected $applicationName = 'Trello Board/List Debugger inClass';
+    protected $applicationName = 'Trello Board/List Debugger';
 
 
     /**
