@@ -87,3 +87,6 @@ h2 {
   display: block;
   clear: both;
 }
+.loading {
+  margin-top: 250px;
+}

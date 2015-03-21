@@ -8,7 +8,7 @@
 <body>
 <div class="container">
     <div id="content">
-        <img src="/image/loading.gif" alt="Loading..."><br><br>
+        <img src="/image/loading.gif" class="loading" alt="Loading..."><br><br>
     </div>
 
     <div class="spacer"><br></div>
